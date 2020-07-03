@@ -1,0 +1,12 @@
+{
+    "Raw Material Cost": 25,
+    "Sell Prices": [10, 20, 30],
+    "Max Demand": [5000, 5000, 3000],
+    "Max Time": 25000,
+    "Product Names":["Product 1", "Product 2", "Product 3"],
+    "Process Raw": {
+        "Cost": 1,
+        "Time": 2,
+        "Yield": [3, 1, 0]
+    }
+}
