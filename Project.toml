@@ -1,0 +1,13 @@
+name = "OperationsResearchApplications"
+uuid = "1159fefd-670c-4920-82fb-fce65e238ad5"
+authors = ["Ethan Buck"]
+version = "0.1.0"
+
+[compat]
+julia = "1.4.2"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
