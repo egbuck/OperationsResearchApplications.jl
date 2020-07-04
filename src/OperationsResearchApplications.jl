@@ -12,7 +12,7 @@ These apps are tagged by both the subject area of the application (ex: manufactu
 """
 
 struct App
-    title::String,
+    title::String
     code_path::String
 end
 
