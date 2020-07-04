@@ -14,7 +14,7 @@ Model Formulation:
         ∑{pair[2]=p}(Convert[pair]) + Produce[p] = Sell[p] + ∑{pair[1]=p}(Convert[pair]) ∀p∈products
         All Dec. Vars. ≥ 0 and Integer
 """
-function model_prod(params, process_df)
+function model_prod(params::Dict, process_df::DataFrame)
     # Model object
     lpModel = Model(optimizer_with_attributes(Cbc.Optimizer, "seconds"=>3600))
 
@@ -75,7 +75,7 @@ function model_prod(params, process_df)
     end
 end
 
-function read_params(file_path)
+function read_params(file_path::String)::Dict
     dict = Dict()
     io = open(file_path, "r")
     dict = JSON.parse(io)
