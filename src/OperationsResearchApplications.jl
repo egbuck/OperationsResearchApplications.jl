@@ -26,7 +26,7 @@ Searches for apps that have both the area_tag(s) and the model_tag(s).
 
 The following searches for an app applied to manufacturing, and is a MILP model
 ```julia
-matches = search(["Manufacting"], ["MILP"])
+#matches = search(["Manufacting"], ["MILP"]) # commented out due to not implemented yet
 ```
 """
 function search(title::String, area_tags::Array{String}, model_tags::Array{String})::Array{String}
