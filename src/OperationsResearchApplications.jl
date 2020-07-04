@@ -14,22 +14,10 @@ These apps are tagged by both the subject area of the application (ex: manufactu
 struct App
     title::String
     code_path::String
+    documentation::String
 end
 
-"""
-    search(area_tags::Array{String}, model_tags::Array{String})
-
-Searches for apps that have both the area_tag(s) and the model_tag(s).
-    This will provide the title of the app(s) (FUTURE: as well as links to the documentation/example problems).
-
-## Examples
-
-The following searches for an app applied to manufacturing, and is a MILP model
-    matches = search(["Manufacting"], ["MILP"]) # not in julia prompt since not implemented
-"""
-function search(title::String, area_tags::Array{String}, model_tags::Array{String})::Array{String}
-    return Array{String}
-end
+include("search.jl")  # search for apps based on title, area tags, or model types
 
 function run(app::App)
     include(app.code_path)
