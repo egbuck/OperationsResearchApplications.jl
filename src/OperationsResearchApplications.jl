@@ -1,7 +1,7 @@
 module OperationsResearchApplications
 
 # export key functions
-export search, run
+export search, run_ora
 
 """
     OperationsResearchApplications
@@ -17,9 +17,9 @@ struct App
     documentation::String
 end
 
-include("search.jl")  # search for apps based on title, area tags, or model types
+include("search_ora.jl")  # search for apps based on title, area tags, or model types
 
-function run(app::App)
+function run_ora(app::App)
     include(app.code_path)
 end
 
