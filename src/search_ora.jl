@@ -14,13 +14,15 @@ matches = search_ora("production process")
 ```
 """
 function search_ora(category::String = "")::Vector{String}
-    pkg_path = pathof(OperationsResearchApplications)
+    pkg_path = dirname(@__FILE__)
     if category == ""
-       return [x for x in readdir(pkg_path) if ~isfile(x)] # list all folders
+        my_list = [titlecase(replace(x, "_" => " ")) 
+            for x in readdir(pkg_path) if isdir(pkg_path * "/" * x)]
+        return my_list # list all folders
     end
     directory = lowercase(replace(category, " " => "_") * "/")
     try
-        return readdir(directory)
+        return readdir(pkg_path * directory)
     catch e
         if isa(e, SystemError)
             throw(ArgumentError(

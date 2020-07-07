@@ -1,7 +1,7 @@
 module OperationsResearchApplications
 
 # export key functions
-export search, run_ora
+export search_ora, run_ora
 
 """
     OperationsResearchApplications
