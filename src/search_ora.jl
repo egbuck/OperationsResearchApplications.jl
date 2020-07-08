@@ -22,11 +22,14 @@ function search_ora(category::String = "")::Vector{String}
     end
     directory = lowercase(replace(category, " " => "_") * "/")
     try
-        return readdir(pkg_path * directory)
+        return [titlecase(replace(x, "_" => " ")) for x in readdir(pkg_path * "/" * directory)]
     catch e
         if isa(e, SystemError)
             throw(ArgumentError(
-                "Category $(category) does not exist! Try search_apps() to list all categories."
+                "Category $(directory[1:(end-1)]) does not exist! 
+                pkg_path: $(pkg_path). 
+                files: $(readdir(pkg_path * "/" * directory))
+                Try search_apps() to list all categories."
             ))
         else
             throw(e)
